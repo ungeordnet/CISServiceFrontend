@@ -23,8 +23,9 @@
 		public function doRegister($cis_nummer,$cis_passwort){
 		//Step 1: Check if user already exists in the Database
 			if(!querys::checkUser($cis_nummer)){
-			//Step 2: Get all data related by script (By parsing)
 			
+			//Step 2: Get all data related by script and by parsing		
+			//exec(/var/www/backend , $result);
 			//TODO: Remove me, when the Backend is done
 			$result = array();
 			array_push($result, "forename:Jan");
@@ -76,7 +77,10 @@
 				array_push($has_moduls,substr($line,10));
 				}
 			}
-			//Step 3: Write the result data to the database
+			//Steo 3: Check for curriculum changes
+			
+			
+			//Step 4: Write the result data to the database
 			}
 		}
 	}
