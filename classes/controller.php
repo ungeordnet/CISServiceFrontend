@@ -77,9 +77,13 @@
 				array_push($has_moduls,substr($line,10));
 				}
 			}
-			//Steo 3: Check for curriculum changes
-			
-			
+			//Step 3: Check for curriculum changes
+			foreach($curriculum as $curriculum_array){
+				if(!querys::checkModul($curriculum_array[1])){
+				//Curriculum existiert noch nicht (laut ModulNr), daher ist ein eintragen möglich
+					querys::addModul($curriculum_array[0],$curriculum_array[2],$curriculum_array[1]);
+				}
+			}
 			//Step 4: Write the result data to the database
 			}
 		}
