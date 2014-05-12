@@ -11,7 +11,7 @@
 			$this->connect();
 		}
 		private function connect(){
-			$connection = mysql_connect ($this->host, $this->user, $this->pwd) or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
+			@$connection = mysql_connect ($this->host, $this->user, $this->pwd) or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
 			mysql_select_db($this->db) or die ("Die Datenbank existiert nicht.");
 		}
 		public function getConnection(){

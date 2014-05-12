@@ -1,3 +1,8 @@
+<?php
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'] == "register") {
+		$return = $controller->doRegister($_POST['cis_nummer'],$_POST['cis_passwort']);
+	}
+?>
     <div class="intro-header">
 
         <div class="container">
@@ -9,11 +14,12 @@
                         <h3>Mailinfos über deine Noten</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
+						<form method="POST" action="?site=overview&action=register">
                             <label for="cis_nummer">CIS-Nummer</label><input class="form-control landing-input" placeholder="CIS-Nummer" name="cis_nummer"><br>
-							<label for="cis_nummer">CIS-Passwort</label><input class="form-control landing-input" placeholder="CIS-Passwort" name="cis_passwort">
-                        </ul>
-						<a class="btn btn-default btn-lg">Eintragen</a>
-						
+							<label for="cis_nummer">CIS-Passwort</label><input type="password" class="form-control landing-input" placeholder="CIS-Passwort" name="cis_passwort">
+						</ul>
+						<input type="submit" class="btn btn-default btn-lg" value="Eintragen"></input>
+						</form>
 						
                     </div>
                 </div>
