@@ -20,11 +20,11 @@
 			return "views/".$site.".php";
 		}
 		
-		public function doRegister($cis_nummer,$cis_passwort){
+		public function doRegister($cis_number,$cis_password,$password){
 		//Step 1: Check if user already exists in the Database
-			if(!querys::checkUser($cis_nummer)){
+			if(!querys::checkUser($cis_number)){
 			//Step 2: Check if CIS data is valid
-			$cmd = "/home/peter/dev/cis_check.pl -validate -username $cis_nummer -password $cis_passwort 2>&1";
+			$cmd = "/home/peter/dev/cis_check.pl -validate -username $cis_number -password $cis_password 2>&1";
 			$valid = shell_exec($cmd);
 				if (empty($valid)){
 				//Step 3: Get all data related by script and by parsing		
@@ -39,6 +39,8 @@
 				array_push($result, "curriculum:Englisch 1;I128;5");
 				array_push($result, "has_modul:I107");
 				array_push($result, "has_modul:I128");
+				$email = "jan.werder@nordakademie.de";
+				
 				
 				$marks = array();
 				$curriculum = array();
@@ -88,6 +90,7 @@
 					}
 				}
 				//Step 5: Write the result data to the database
+				querys::addUser($forename,$surname,$password,$email,$cis_number,$cis_password);
 				}else{
 					return "wrongcisdata";
 				}

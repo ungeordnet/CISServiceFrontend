@@ -28,11 +28,27 @@
 			}
 		}
 		
-		public static function addModul($subject,$creditpoints,$modulnr){
+		public static function addModul($subject,$creditpoints,$modulnr,$password){
 			$query = mysql_query("INSERT INTO curriculum VALUES ('$subject','$creditpoints','$modulnr')");
 			if(!$query){
 				echo "Error adding module.";
 			}
+		}
+		
+		public static function addUser($forename,$surname,$password,$email,$cis_number,$cis_password){
+			$password = querys::encryptPassword($password);
+			$query = mysql_query("INSERT INTO users VALUES ('$forename','$surname','$password','$email','$cis_number','$cis_password')");
+			if(!$query){
+				echo "Error adding module.";
+			}
+		}
+		
+		public static function encryptPassword($password){
+			return $password;
+		}
+		
+		public static function decryptPassword($password){
+			return $password;
 		}
 	}
 ?>
