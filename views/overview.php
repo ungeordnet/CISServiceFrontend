@@ -6,7 +6,7 @@
     <div class="intro-header">
 
         <div class="container">
-
+<?php if(!empty($return)){include("error/".$return.".htm");}?>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
