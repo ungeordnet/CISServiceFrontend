@@ -33,13 +33,13 @@
 				$result = array();
 				array_push($result, "forename:Jan");
 				array_push($result, "surname:Werder");
+				array_push($result, "email:jan.werder@nordakademie.de");
 				array_push($result, "mark:Algorithmen & Datenstrukturen;3.0;09.05.2014");
 				array_push($result, "mark:Englisch 1;3.0;09.05.2014");
 				array_push($result, "curriculum:Algorithmen & Datenstrukturen;I107;6");
 				array_push($result, "curriculum:Englisch 1;I128;5");
 				array_push($result, "has_modul:I107");
 				array_push($result, "has_modul:I128");
-				$email = "jan.werder@nordakademie.de";
 				
 				
 				$marks = array();
@@ -48,6 +48,9 @@
 				foreach($result as $line){
 					if(substr_count($line,'forename') != 0){
 					$forename = substr($line,9);
+					}
+					if(substr_count($line,'email') != 0){
+					$email = substr($line,6);
 					}
 					if(substr_count($line,'surname') != 0){
 					$surname = substr($line,8);
