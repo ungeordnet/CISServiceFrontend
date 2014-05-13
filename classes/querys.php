@@ -43,6 +43,22 @@
 			}
 		}
 		
+		public static function addMark($subject,$value,$date,$cis_number){
+			$date = date('y-m-d', strtotime($date));
+			echo $date;
+			$query = mysql_query("INSERT INTO marks VALUES ('$subject','$value','$date','false','$cis_number')");
+			if(!$query){
+				echo "Error adding mark.";
+			}
+		}
+		
+		public static function addModulAssoc($cis_number,$modulnr){
+			$query = mysql_query("INSERT INTO has_modul VALUES ('$cis_number','$modulnr')");
+			if(!$query){
+				echo "Error adding mark.";
+			}
+		}
+		
 		public static function encryptPassword($password){
 			return $password;
 		}

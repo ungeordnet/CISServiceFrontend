@@ -91,9 +91,17 @@
 				}
 				//Step 5: Write the result data to the database
 				querys::addUser($forename,$surname,$password,$email,$cis_number,$cis_password);
+				foreach($marks as $mark){
+					querys::addMark($mark[0],$mark[1],$mark[2],$cis_number);				
+				}
+				foreach($has_moduls as $hm){
+					querys::addModulAssoc($cis_number,$hm);
+				}
 				}else{
 					return "wrongcisdata";
 				}
+			}else{
+				return "useralreadyexists";
 			}
 		}
 	}
