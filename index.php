@@ -34,36 +34,30 @@ $controller = new controller();
 
   <body>
 
-      <nav>
-        <div class='navbar navbar-inverse navbar-fixed-top' style='background-color: #036; -moz-transition: height 0.5s linear;' role='navigation'>
-            <div id="nav" class='container'>
-                <div class='navbar-collapse collapse'>
-                    <div class="btn btn-primary btn-lg" style="background-color: #036; border-color: #036;">
-                        <span class="glyphicon glyphicon-th-list"></span>
-                    </div>              
-                </div>
-                <div id="navhiddenbar">
-                    <form class="form-inline" role="form">
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">CIS-Nummer</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword2">Passwort</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Eingeloggt bleiben
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Einloggen</button>
-                    </form>
+    <!-- Navigation-Leiste -->
+    <div class='navbar navbar-inverse navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
+        <div id="nav" class='container'>
+            <div class='navbar-collapse collapse'>
+                <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </div>              
+            </div>
+            <div id="navhiddenbar">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="cis_nummer_login">CIS Nummer</label>
+                        <input type="email" class="form-control" id="cis_nummer_login" placeholder="Deine CIS-Kennung">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="passwort_login">Passwort</label>
+                        <input type="password" class="form-control" id="passwort_login" placeholder="Dein Notify Passwort">
+                    </div>
+                    <button type="submit" class="btn btn-default">Einloggen</button>
+                </form>
 
-                </div>
             </div>
         </div>
-    </nav>
+    </div>
     <?php include ($controller->get_site($controller)); ?>
 
 </body>
