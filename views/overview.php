@@ -3,10 +3,8 @@
 		$return = $controller->doRegister($_POST['cis_number'],$_POST['cis_password'],$_POST['password']);
 	}
 ?>
-    <div class="intro-header">
-
-        <div class="container">
 <?php if(!empty($return)){include("error/".$return.".htm");}?>
+<body role="document">
     <!-- Navigation-Leiste -->
     <div class='navbar navbar-inverse navbar-fixed-top' style='background-color: #036; -moz-transition: height 0.5s linear;' role='navigation'>
         <div id="nav" class='container'>
@@ -19,11 +17,11 @@
                 <form class="form-inline" role="form">
                     <div class="form-group">
                         <label class="sr-only" for="cis_nummer_login">CIS Nummer</label>
-                        <input type="email" class="form-control" id="cis_nummer_login" placeholder="CIS Nummer">
+                        <input type="email" class="form-control" id="cis_nummer_login" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="passwort_login">Passwort</label>
-                        <input type="password" class="form-control" id="passwort_login" placeholder="Passwort">
+                        <input type="password" class="form-control" id="passwort_login" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-default">Sign in</button>
                 </form>
@@ -96,4 +94,4 @@
             </div>
         </div>
     </div>
-</footer>  
+</footer>
