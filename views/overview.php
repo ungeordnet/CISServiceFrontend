@@ -6,10 +6,10 @@
 <?php if(!empty($return)){include("error/".$return.".htm");}?>
 <body role="document">
     <!-- Navigation-Leiste -->
-    <div class='navbar navbar-inverse navbar-fixed-top' style='background-color: #036; -moz-transition: height 0.5s linear;' role='navigation'>
+    <div class='navbar navbar-inverse navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
         <div id="nav" class='container'>
             <div class='navbar-collapse collapse'>
-                <div class="btn btn-primary btn-lg" style="background-color: #036; border-color: #036;" type="butt">
+                <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
                     <span class="glyphicon glyphicon-th-list"></span>
                 </div>              
             </div>
@@ -17,11 +17,11 @@
                 <form class="form-inline" role="form">
                     <div class="form-group">
                         <label class="sr-only" for="cis_nummer_login">CIS Nummer</label>
-                        <input type="email" class="form-control" id="cis_nummer_login" placeholder="Enter email">
+                        <input type="email" class="form-control" id="cis_nummer_login" placeholder="Deine CIS-Kennung">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="passwort_login">Passwort</label>
-                        <input type="password" class="form-control" id="passwort_login" placeholder="Password">
+                        <input type="password" class="form-control" id="passwort_login" placeholder="Dein Notify Passwort">
                     </div>
                     <button type="submit" class="btn btn-default">Sign in</button>
                 </form>
@@ -47,9 +47,9 @@
                         <hr class="intro-divider" />    
                         <ul class="list-inline intro-social-buttons">
                             <form method="POST" action="?site=overview&action=register">
-                                <label for="cis_nummer">CIS-Nummer</label><input class="form-control landing-input" placeholder="CIS-Nummer" name="cis_number"><br>
-                                <label for="cis_nummer">CIS-Passwort</label><input type="password" class="form-control landing-input" placeholder="CIS-Passwort" name="cis_password"></br>
-                                <label for="cis_nummer">NOTIFY-Passwort</label><input type="password" class="form-control landing-input" placeholder="Passwort" name="password"></br>
+                                <label for="cis_nummer">CIS-Nummer</label><input class="form-control landing-input" placeholder="Deine CIS-Kennung" name="cis_number"><br>
+                                <label for="cis_nummer">CIS-Passwort</label><input type="password" class="form-control landing-input" placeholder="Dein CIS-Passwort" name="cis_password"></br>
+                                <label for="cis_nummer">NOTIFY-Passwort</label><input type="password" class="form-control landing-input" placeholder="Notify-Passwort" name="password"></br>
                                 <input type="submit" class="btn btn-default btn-lg" value="Eintragen"></input>
                             </form>
                         </ul>
