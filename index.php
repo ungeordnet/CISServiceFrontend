@@ -45,19 +45,19 @@ $controller = new controller();
                 <div id="navhiddenbar">
                     <form class="form-inline" role="form">
                         <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <label class="sr-only" for="exampleInputEmail2">CIS-Nummer</label>
                             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <label class="sr-only" for="exampleInputPassword2">Passwort</label>
                             <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Remember me
+                                <input type="checkbox"> Eingeloggt bleiben
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Sign in</button>
+                        <button type="submit" class="btn btn-default">Einloggen</button>
                     </form>
 
                 </div>
