@@ -31,7 +31,7 @@ $controller = new controller();
   <div class='navbar navbar-inline navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
     <div class='container-fluid'>
       <div class="navbar-form navbar-left brand">
-          <a href="?"><span class="glyphicon glyphicon-th-list" ></span></a>    
+          <a href="?"><img src="img/logotext.png"></a>    
       </div>
 	<?php controller::isLoggedIn(); ?>
     </div>
