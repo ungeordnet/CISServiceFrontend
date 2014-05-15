@@ -5,6 +5,7 @@
 			include('querys.php');
 			include('PasswordHash.php');
 			$dbConnection = new dbConnection();
+			$this->initSession();
 		}
 		public function isActiveNavigation($link){
 			$link = "views/".$link.".php";
@@ -21,7 +22,39 @@
 			return "views/".$site.".php";
 		}
 		
-		public function doRegister($cis_number,$cis_password,$password){
+		/* Session & Login functions */
+		private function initSession(){
+			session_start();
+		}
+		
+		public function getName($cis_number,$cis_password){
+			//$cmd = "/home/peter/dev/cis_check.pl -getName -username $cis_number -password $cis_password 2>&1";
+			//$result = shell_exec($cmd);
+			$result = array();
+			array_push($result, "forename:Jan");
+			array_push($result, "surname:Werder");
+			foreach($result as $line){
+					if(substr_count($line,'forename') != 0){
+					$forename = substr($line,9);
+					}
+					if(substr_count($line,'surname') != 0){
+					$surname = substr($line,8);
+					}
+			}
+			return array($forename,$surname);
+		}
+		
+		public function  checkCISData($cis_number,$cis_password){
+		$cmd = "/home/peter/dev/cis_check.pl -validate -username $cis_number -password $cis_password 2>&1";
+		$valid = shell_exec($cmd);
+			if (empty($valid)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		public function doRegister($cis_number,$cis_password,$password,$email){
 		//Step 1: Check if user already exists in the Database
 			if(!querys::checkUser($cis_number)){
 			//Step 2: Check if CIS data is valid
@@ -49,9 +82,6 @@
 				foreach($result as $line){
 					if(substr_count($line,'forename') != 0){
 					$forename = substr($line,9);
-					}
-					if(substr_count($line,'email') != 0){
-					$email = substr($line,6);
 					}
 					if(substr_count($line,'surname') != 0){
 					$surname = substr($line,8);
@@ -94,7 +124,7 @@
 					}
 				}
 				//Step 5: Write the result data to the database
-				querys::addUser($forename,$surname,create_hash($password),$email,create_hash($cis_number),$cis_password);
+				querys::addUser($forename,$surname,create_hash($password),$email,$cis_number,create_hash($cis_password));
 				foreach($marks as $mark){
 					querys::addMark($mark[0],$mark[1],$mark[2],$cis_number);				
 				}

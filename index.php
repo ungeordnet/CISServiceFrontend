@@ -37,7 +37,7 @@ $controller = new controller();
     <div class='container-fluid'>
       <div class="navbar-form navbar-left">
         <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
-          <span class="glyphicon glyphicon-th-list" ></span>
+          <a href="?"><span class="glyphicon glyphicon-th-list" ></span></a>
         </div>        
       </div>
       <div class="navbar-form navbar-right">
