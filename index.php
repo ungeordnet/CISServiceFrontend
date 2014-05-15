@@ -33,16 +33,14 @@ $controller = new controller();
   </head>
 
   <body>
-
-    <!-- Navigation-Leiste -->
-    <div class='navbar navbar-inverse navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
-        <div id="nav" class='container'>
-            <div class='navbar-collapse collapse'>
-                <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
-                    <span class="glyphicon glyphicon-th-list"></span>
-                </div>              
-            </div>
-            <div id="navhiddenbar">
+  <div class='navbar navbar-inline navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
+    <div class='container-fluid'>
+      <div class="navbar-form navbar-left">
+        <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
+          <span class="glyphicon glyphicon-th-list" ></span>
+        </div>        
+      </div>
+      <div class="navbar-form navbar-right">
                 <form class="form-inline" role="form">
                     <div class="form-group">
                         <label class="sr-only" for="cis_nummer_login">CIS Nummer</label>
@@ -52,12 +50,12 @@ $controller = new controller();
                         <label class="sr-only" for="passwort_login">Passwort</label>
                         <input type="password" class="form-control" id="passwort_login" placeholder="Dein Notify Passwort">
                     </div>
-                    <button type="submit" class="btn btn-default">Einloggen</button>
+                    <button type="submit" class="btn btn-default">Sign in</button>
                 </form>
 
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
     <?php include ($controller->get_site($controller)); ?>
 
 </body>
