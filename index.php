@@ -30,10 +30,8 @@ $controller = new controller();
   <body>
   <div class='navbar navbar-inline navbar-fixed-top' style="background-color: #8ebe3d; border-color: #8ebe3d;" role='navigation'>
     <div class='container-fluid'>
-      <div class="navbar-form navbar-left">
-        <div class="btn btn-primary btn-lg" style="background-color: #8ebe3d; border-color: #8ebe3d;" type="butt">
-          <a href="?"><span class="glyphicon glyphicon-th-list" ></span></a>
-        </div>        
+      <div class="navbar-form navbar-left brand">
+          <a href="?"><span class="glyphicon glyphicon-th-list" ></span></a>    
       </div>
 	<?php controller::isLoggedIn(); ?>
     </div>
