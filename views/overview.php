@@ -1,3 +1,10 @@
+<?php    
+	if(!empty($_GET['action'])) {
+		if($_GET['action'] == 'logout'){
+			$return = $controller->doLogout();
+		}
+	}
+?>
 <body role="document">
 <div class="container">
 	<div class="row">

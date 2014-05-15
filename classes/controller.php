@@ -27,6 +27,30 @@
 			session_start();
 		}
 		
+		public function doLogin($cis_number, $password){
+			if(validate_password($password,querys::getPassword($cis_number))){
+				$_SESSION['loggedin'] = "true";
+				$_SESSION['cis_number'] = $cis_number;
+				header('Location: ?site=settings');
+			}else{
+				return "wrongpassword";
+			}
+		}
+		
+		public function doLogout(){
+			unset($_SESSION['loggedin']); 
+			unset($_SESSION['cis_number']); 
+			header('Location: ?');
+		}
+		
+		public static function isLoggedIn(){
+			if(!empty($_SESSION['loggedin'])){ 
+				include 'views/loggedinbar.php';
+			}else{
+				include 'views/loginbar.php';
+			}
+		}
+		
 		public function getName($cis_number,$cis_password){
 			//$cmd = "/home/peter/dev/cis_check.pl -getName -username $cis_number -password $cis_password 2>&1";
 			//$result = shell_exec($cmd);

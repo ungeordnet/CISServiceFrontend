@@ -57,5 +57,12 @@
 				echo "Error adding mark.";
 			}
 		}
+		
+		public static function getPassword($cis_number){
+			$query = mysql_query("SELECT password FROM users WHERE cis_number = '$cis_number'");
+			while($row = mysql_fetch_object($query)){
+				return $row->password;
+			}
+		}
 	}
 ?>
