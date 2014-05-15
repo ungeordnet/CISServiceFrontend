@@ -36,7 +36,7 @@
 		}
 		
 		public static function addUser($forename,$surname,$password,$email,$cis_number,$cis_password){
-			$password = querys::encryptPassword($password);
+			$password = $password;
 			$query = mysql_query("INSERT INTO users VALUES ('$forename','$surname','$password','$email','$cis_number','$cis_password')");
 			if(!$query){
 				echo "Error adding module.";
@@ -56,14 +56,6 @@
 			if(!$query){
 				echo "Error adding mark.";
 			}
-		}
-		
-		public static function encryptPassword($password){
-			return $password;
-		}
-		
-		public static function decryptPassword($password){
-			return $password;
 		}
 	}
 ?>

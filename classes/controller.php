@@ -3,6 +3,7 @@
 		public function __construct(){
 			include('dbConnection.php');
 			include('querys.php');
+			include('PasswordHash.php');
 			$dbConnection = new dbConnection();
 		}
 		public function isActiveNavigation($link){
@@ -93,7 +94,7 @@
 					}
 				}
 				//Step 5: Write the result data to the database
-				querys::addUser($forename,$surname,$password,$email,$cis_number,$cis_password);
+				querys::addUser($forename,$surname,create_hash($password),$email,create_hash($cis_number),$cis_password);
 				foreach($marks as $mark){
 					querys::addMark($mark[0],$mark[1],$mark[2],$cis_number);				
 				}
