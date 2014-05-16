@@ -27,11 +27,12 @@
 				<div class="intro-message">
 					<h2>NOTIFY Registrierung Schritt 2:<small>(Fast geschafft!)</small></h2>
 					<hr class="intro-divider">
-					<form method="POST" action="?site=settings&action=register">
+					<form method="POST" action="?site=settings&action=register" onSubmit="return checkReq()">
 						<h3>Hallo <?php echo $name[0]?>,</h3>
 						<label for="email">E-Mail für die Benachrichtigungen</label><input type="email" class="form-control landing-input" placeholder="anne.theke@nordakademie.de" name="email"><br>
 						<input type="checkbox" id="agb">Mit dem Bestätigen der dieser Checkbox bist du mit der Art und Weise wie Notify funktioniert einverstanden und akzeptierst das wir keine Haftung für deine Daten übernehmen.</input>
 						<br><br>
+						<div id="error" class="alert alert-danger" style="display:none;"></div>
 						<div class="btn-group btn-group-justified">
 							<div class="btn-group">
 								<input type="submit" class="btn btn-success btn-lg" value="#Geilon"></input>
@@ -47,5 +48,16 @@
 	</div>
 
 	<br>
-</body>
 <?php include'footer.php'; ?>  
+<script type="text/javascript">
+function checkReq(){
+if ($('#agb').is(":checked")) {
+        return true;
+    }else{
+		$('#error').show();
+		$('#error').text('Bitte zuerst die AGB akzeptieren.');
+		return false;
+	}
+}
+</script>	
+</body>
