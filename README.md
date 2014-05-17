@@ -1,5 +1,7 @@
-Cis Check Frontend
+<img src="https://raw.githubusercontent.com/PascalGoergen/CISServiceFrontend/master/img/logotext.png"> Frontend
 ==================
+This document is supposed to illustrate the front end of Notify
+
 
 ##Database Concept##
 
